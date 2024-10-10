@@ -1,4 +1,6 @@
-package ua.mibal;
+package ua.mibal.component;
+
+import java.beans.Expression;
 
 /**
  * @author Mykhailo Balakhon
@@ -7,6 +9,10 @@ package ua.mibal;
 public class Calculator {
 
     public void run() {
+        
+    }
+
+    public void calculate(Expression expression) {
         
     }
 }
