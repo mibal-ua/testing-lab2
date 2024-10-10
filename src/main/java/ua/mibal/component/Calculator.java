@@ -12,7 +12,7 @@ public class Calculator {
         
     }
 
-    public void calculate(Expression expression) {
-        
+    public int calculate(Expression expression) {
+        return -1;
     }
 }
