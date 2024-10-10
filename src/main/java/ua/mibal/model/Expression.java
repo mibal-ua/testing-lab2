@@ -10,4 +10,7 @@ public record Expression(
         Integer right,
         boolean isEqualsPresent
 ) {
+    public static Expression empty() {
+        return new Expression(null, null, null, false);
+    }
 }
