@@ -1,6 +1,6 @@
 package ua.mibal.component;
 
-import java.beans.Expression;
+import ua.mibal.model.Expression;
 
 /**
  * @author Mykhailo Balakhon

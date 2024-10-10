@@ -7,6 +7,7 @@ package ua.mibal.model;
 public record Expression(
         int left,
         Operation operation,
-        int right
+        int right,
+        boolean isEqualsPresent
 ) {
 }
