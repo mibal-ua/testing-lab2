@@ -20,16 +20,9 @@ public class Calculator {
         if (!expression.isEqualsPresent()) {
             return expression.right();
         }
-        switch (expression.operation()) {
-            case ADD:
-                return expression.left() + expression.right();
-            case SUBTRACT:
-                return expression.left() - expression.right();
-            case MULTIPLY:
-                return expression.left() * expression.right();
-            case DIVIDE:
-                return expression.left() / expression.right();
-        }
-        throw new IllegalArgumentException("Unknown operation: " + expression.operation());
+        return expression.operation().evaluate(
+                expression.left(),
+                expression.right()
+        );
     }
 }
