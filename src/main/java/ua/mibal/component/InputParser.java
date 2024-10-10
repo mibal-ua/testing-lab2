@@ -3,6 +3,8 @@ package ua.mibal.component;
 import ua.mibal.model.Expression;
 import ua.mibal.model.Operation;
 
+import java.util.Arrays;
+
 /**
  * @author Mykhailo Balakhon
  * @link <a href="mailto:mykhailo.balakhon@communify.us">mykhailo.balakhon@communify.us</a>
@@ -20,6 +22,7 @@ public class InputParser {
     }
 
     private Expression parseExpression(String input) {
+        if (input.isEmpty()) return Expression.empty();
         String[] tokens = input.split(" ");
 
         StringBuilder number = new StringBuilder();
@@ -32,25 +35,27 @@ public class InputParser {
         for (String token : tokens) {
             if (isNumber(token)) {
                 number.append(token);
-            } else {
-                if (operation == null) {
-                    left = Integer.parseInt(number.toString());
-                } else {
-                    right = Integer.parseInt(number.toString());
-                }
-                number = new StringBuilder();
             }
             if (isOperation(token)) {
                 operation = token;
+                left = Integer.parseInt(number.toString());
+                number = new StringBuilder();
             }
             if (isEquals(token)) {
                 isEqualsPresent = true;
             }
         }
-        
+        if (!number.isEmpty()) {
+            if (operation == null) {
+                left =  Integer.parseInt(number.toString());
+            } else {
+                right =  Integer.parseInt(number.toString());
+            }
+        }
+
         return new Expression(
                 left,
-                Operation.valueOfSign(operation),
+                operation == null ? null : Operation.valueOfSign(operation),
                 right,
                 isEqualsPresent
         );
