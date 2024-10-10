@@ -10,7 +10,7 @@ import ua.mibal.model.Operation;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalculatorTest {
-    private Calculator calculator = new Calculator();
+    private final Calculator calculator = new Calculator();
 
     @Test
     public void calculateEmpty() {

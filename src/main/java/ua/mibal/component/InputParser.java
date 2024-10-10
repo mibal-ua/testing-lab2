@@ -20,7 +20,9 @@ public class InputParser {
     }
 
     private Expression parseExpression(String input) {
-        if (input.isEmpty()) return Expression.empty();
+        if (input.isEmpty()) {
+            return Expression.empty();
+        }
         String[] tokens = input.split(" ");
 
         StringBuilder number = new StringBuilder();
@@ -45,9 +47,9 @@ public class InputParser {
         }
         if (!number.isEmpty()) {
             if (operation == null) {
-                left =  Integer.parseInt(number.toString());
+                left = Integer.parseInt(number.toString());
             } else {
-                right =  Integer.parseInt(number.toString());
+                right = Integer.parseInt(number.toString());
             }
         }
 

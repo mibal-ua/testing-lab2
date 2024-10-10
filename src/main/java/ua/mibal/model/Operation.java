@@ -11,7 +11,7 @@ public enum Operation {
     SUBTRACT("-", (a, b) -> a - b),
     MULTIPLY("*", (a, b) -> a * b),
     DIVIDE("/", (a, b) -> a / b);
-    
+
     private final String sign;
     private final IntBinaryOperator evaluator;
 
@@ -28,7 +28,7 @@ public enum Operation {
         }
         throw new IllegalArgumentException("Unknown operation: " + operation);
     }
-    
+
     public int evaluate(int a, int b) {
         return evaluator.applyAsInt(a, b);
     }
