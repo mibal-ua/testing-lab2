@@ -16,7 +16,7 @@ public class InputParserTest {
     public void parseFullExpression() {
         when(fileReader.readFile("./someFile.txt")).thenReturn("1 3 5 + 1 3 =");
         Expression result = inputParser.parse("./someFile.txt");
-        Expression expected = new Expression(135, Operation.ADD, 13, true);
+        Expression expected = new Expression(135, Operation.ADD, 13);
         assertEquals(expected, result);
     }
 }
