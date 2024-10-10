@@ -1,6 +1,7 @@
 package ua.mibal;
 
 import ua.mibal.component.Calculator;
+import ua.mibal.component.FileReader;
 import ua.mibal.component.InputParser;
 
 import java.beans.Expression;
@@ -11,10 +12,12 @@ import java.beans.Expression;
  */
 public class App {
     private final Calculator calculator = new Calculator();
-    private final InputParser inputParser = new InputParser();
+    private final InputParser inputParser = new InputParser(
+            new FileReader()
+    );
 
     public void run(String[] args) {
-        Expression expression = inputParser.parse(args);
+        Expression expression = inputParser.parse(args[0]);
         calculator.calculate(expression);
     }
 }

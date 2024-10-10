@@ -7,7 +7,13 @@ import java.beans.Expression;
  * @link <a href="mailto:mykhailo.balakhon@communify.us">mykhailo.balakhon@communify.us</a>
  */
 public class InputParser {
-    public Expression parse(String[] args) {
+    private final FileReader fileReader;
+
+    public InputParser(FileReader fileReader) {
+        this.fileReader = fileReader;
+    }
+
+    public Expression parse(String path) {
         return null;
     }
 }
