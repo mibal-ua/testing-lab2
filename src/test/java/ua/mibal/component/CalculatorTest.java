@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.EnumSource;
 import ua.mibal.model.Expression;
 import ua.mibal.model.Operation;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalculatorTest {
     private Calculator calculator = new Calculator();
@@ -40,10 +40,10 @@ class CalculatorTest {
 
     @ParameterizedTest
     @CsvSource({
-            "100,    -,    99, 1",
-            "9,      /,    3, 3",
-            "5,    *,    2, 10",
-            "135,    +,    123, 268",
+            "100,   -,    99,   1",
+            "9,     /,    3,    3",
+            "5,     *,    2,    10",
+            "135,   +,    123,  258",
     })
     public void calculateFullExpression(int left, String operation, int right, int expected) {
         int result = calculator.calculate(new Expression(left, Operation.valueOfSign(operation), right, true));
@@ -52,8 +52,8 @@ class CalculatorTest {
 
     @ParameterizedTest
     @CsvSource({
-            "100,      /,    3, 33",
-            "9,    /,    10, 0",
+            "100,   /,  3,  33",
+            "9,     /,  10, 0",
     })
     public void calculateRounding(int left, String operation, int right, int expected) {
         int result = calculator.calculate(new Expression(left, Operation.valueOfSign(operation), right, true));
