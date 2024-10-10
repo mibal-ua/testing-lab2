@@ -3,8 +3,7 @@ package ua.mibal;
 import ua.mibal.component.Calculator;
 import ua.mibal.component.FileReader;
 import ua.mibal.component.InputParser;
-
-import java.beans.Expression;
+import ua.mibal.model.Expression;
 
 /**
  * @author Mykhailo Balakhon
