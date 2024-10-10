@@ -20,6 +20,6 @@ public class App {
     public void run(String[] args) {
         Expression expression = inputParser.parse(args[0]);
         int result = calculator.calculate(expression);
-        fileWriter.write(result);
+        fileWriter.write(result, args[1]);
     }
 }
