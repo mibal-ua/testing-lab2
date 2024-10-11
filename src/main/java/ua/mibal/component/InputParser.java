@@ -23,7 +23,7 @@ public class InputParser {
         if (input.isEmpty()) {
             return Expression.empty();
         }
-        String[] tokens = input.split(" ");
+        String[] tokens = input.trim().split(" ");
 
         StringBuilder number = new StringBuilder();
 
