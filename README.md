@@ -1,5 +1,5 @@
 # Lab2
-## Created by: Michael Fierce Balakhon and Bogdan Yarmolka IM-22
+## Created by: Mykhailo Balakhon and Bohdan Yarmolka IM-22
 
 We use TDD and extreme programming.
 
